@@ -1,0 +1,15 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid white;
+  gap: 2px;
+}
+.card-details {
+  border: 2px solid white;
+}
+.card-header {
+  border: 2px solid white;
+}
+.card-attributs {
+  border: 2px solid white;
+}
