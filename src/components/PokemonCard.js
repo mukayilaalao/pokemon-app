@@ -39,11 +39,10 @@ class PokemonCard extends React.Component {
                             height:pokeData.height,
                             weight:pokeData.weight,
                             type:pokeData.types[0].type.name,
-                            id:pokeData.id,
                             hp:hp,
                             atk:atk,
                             def:def
-                        },()=> this.props.getData({pokemonName:pokeData.name,image:pokeData.sprites.front_default,}));
+                        },()=> this.props.getData({pokemonName:pokeData.name,image:pokeData.sprites.front_default,id:pokeData.id,hp,atk,def}));
                     })
 
                     
@@ -52,23 +51,24 @@ class PokemonCard extends React.Component {
         
     }
     render() { 
+        const {image,pokemonName,type,weight,height,hp,atk,def}=this.state;
         return (
             <div className="card">
                 <section className="card-header">
                     <h2>Details</h2>
-                    <img src={this.state.image} alt={this.state.pokemonName}/>
+                    <img src={image} alt={pokemonName}/>
                 </section>
                 <section className="card-details">
-                    <div>Name: {this.state.pokemonName}</div>
-                    <div>Height: {this.state.height}</div>
-                    <div>Weight: {this.state.weight}</div>
-                    <div>Type: {this.state.type}</div>
+                    <div>Name: {this.props.format(pokemonName)}</div>
+                    <div>Height: {height}</div>
+                    <div>Weight: {weight}</div>
+                    <div>Type: {type}</div>
                 </section>
                 <section className="card-attributs">
                     <h2>Base Attributs</h2>
-                    <div>Hits Points: {this.state.hp}</div>
-                    <div>Attack: {this.state.atk}</div>
-                    <div>Defense: {this.state.def}</div>
+                    <div>Hits Points: {hp}</div>
+                    <div>Attack: {atk}</div>
+                    <div>Defense: {def}</div>
                 </section>
             </div>
         );

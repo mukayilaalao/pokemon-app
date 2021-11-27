@@ -6,7 +6,7 @@ class Team extends React.Component {
         return (
             <div className="team-member">
                 <img src={image} alt={pokemonName}/>
-                <span>{pokemonName}</span>
+                <span>{this.props.format(pokemonName)}</span>
             </div>
         );
     }
